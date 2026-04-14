@@ -23,11 +23,11 @@
   "author": "Stephen Horvath",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/asciiman/ddd-core.git"
+    "url": "git+https://github.com/asciiman/ddd-core-ts.git"
   },
-  "homepage": "https://github.com/asciiman/ddd-core#readme",
+  "homepage": "https://github.com/asciiman/ddd-core-ts#readme",
   "bugs": {
-    "url": "https://github.com/asciiman/ddd-core/issues"
+    "url": "https://github.com/asciiman/ddd-core-ts/issues"
   },
   "keywords": [
     "ddd",

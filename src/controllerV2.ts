@@ -56,7 +56,7 @@ export async function handleRequest<RequestDTO, RequestDomain, ResponseDomain, R
     }
   } catch (cause) {
     const controllerCode = useCaseExecutor.code;
-    const message = `Error handling controller request for use case ${controllerCode} in ddd-core controller`;
+    const message = `Error handling controller request for use case ${controllerCode} in ddd-core-ts controller`;
     return ResultOrError.error(new SomethingWentWrongError(message, { cause }));
   }
 }
