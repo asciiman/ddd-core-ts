@@ -1,12 +1,43 @@
 {
-  "name": "ddd-core",
-  "version": "0.1.0",
+  "name": "ddd-core-ts",
+  "version": "0.1.1",
+  "description": "TypeScript building blocks for Domain-Driven Design — entities, value objects, use cases, domain errors, domain events, and more.",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
   "sideEffects": false,
-  "license": "UNLICENSED",
+  "license": "MIT",
+  "author": "Stephen Horvath",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asciiman/ddd-core.git"
+  },
+  "homepage": "https://github.com/asciiman/ddd-core#readme",
+  "bugs": {
+    "url": "https://github.com/asciiman/ddd-core/issues"
+  },
+  "keywords": [
+    "ddd",
+    "domain-driven-design",
+    "entity",
+    "value-object",
+    "use-case",
+    "domain-events",
+    "typescript"
+  ],
   "files": [
     "dist/**"
   ],
