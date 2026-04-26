@@ -853,6 +853,24 @@ Handles circular references gracefully.
 * Use `Promise.all()` for independent parallel operations.
 * Always `await` in a `try/catch` for proper error context.
 
+### Bounded Context Boundary Rule
+
+A bounded context must never reuse another bounded context’s domain objects directly.
+
+When one bounded context calls another:
+
+- The caller uses its own local domain model internally.
+- The caller maps local domain objects to the callee’s request DTOs at the infrastructure boundary.
+- The callee responds with response DTOs.
+- The caller maps those response DTOs back into its own local domain objects.
+
+This rule applies even when the two contexts currently share the same shape or vocabulary. Shared shape is not a reason to share domain classes.
+
+In practice:
+- Domain and use-case layers should not import another bounded context package.
+- Cross-context imports should be limited to controller facades and DTO types in infrastructure adapters.
+- If many subdomains need the same concept, perhaps it is a primitive. Extract it into an explicit shared kernel package rather than importing one context’s domain into another.
+
 ### Testing
 
 * Unit tests for domain logic (no infrastructure dependencies).
